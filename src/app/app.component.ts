@@ -26,7 +26,6 @@ export class AppComponent implements OnInit{
     this.siteService.getSites()
     .subscribe (sites=> {
       this.siteInfoList = sites;
-      console.log(sites);
     }); 
   }
 

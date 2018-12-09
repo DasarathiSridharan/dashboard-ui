@@ -23,7 +23,6 @@ createSite(site: SiteInfo): Observable <any> {
 }
 
 getSites(): Observable <SiteInfo[]> {
-    console.log(this.siteUrl);
     return this.http.get(this.siteUrl)
     .pipe(map(res => {
         return res["data"].docs as SiteInfo[];
@@ -37,7 +36,6 @@ editSite(site:SiteInfo) {
 
 deleteSite(id:string) {
     let deleteUrl = this.siteUrl+'/'+id;
-    console.log(deleteUrl);
     return this.http.delete(deleteUrl)
         .pipe(map(res=> {
             return res;
